@@ -1,0 +1,4 @@
+E:\MyWork\APIUnitTest\OpenAPIUnitTest.Core\bin\Debug\OpenAPIUnitTest.Core.dll
+E:\MyWork\APIUnitTest\OpenAPIUnitTest.Core\bin\Debug\OpenAPIUnitTest.Core.pdb
+E:\MyWork\APIUnitTest\OpenAPIUnitTest.Core\obj\Debug\OpenAPIUnitTest.Core.dll
+E:\MyWork\APIUnitTest\OpenAPIUnitTest.Core\obj\Debug\OpenAPIUnitTest.Core.pdb

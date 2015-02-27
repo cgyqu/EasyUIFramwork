@@ -10,3 +10,8 @@ E:\MyWork\OpenAPIUnitTest\OpenAPI.CommonLib\bin\Debug\TCBase.ConfigCenter.Compon
 E:\MyWork\OpenAPIUnitTest\OpenAPI.CommonLib\bin\Debug\TongCheng.SOA.Core.xml
 E:\MyWork\OpenAPIUnitTest\OpenAPI.CommonLib\obj\Debug\CommonLib.dll
 E:\MyWork\OpenAPIUnitTest\OpenAPI.CommonLib\obj\Debug\CommonLib.pdb
+E:\MyWork\APIUnitTest\OpenAPI.CommonLib\bin\Debug\CommonLib.dll
+E:\MyWork\APIUnitTest\OpenAPI.CommonLib\bin\Debug\CommonLib.pdb
+E:\MyWork\APIUnitTest\OpenAPI.CommonLib\obj\Debug\CommonLib.dll
+E:\MyWork\APIUnitTest\OpenAPI.CommonLib\obj\Debug\CommonLib.pdb
+E:\MyWork\APIUnitTest\OpenAPI.CommonLib\obj\Debug\CommonLib.csprojResolveAssemblyReference.cache
