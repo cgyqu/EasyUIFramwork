@@ -3,31 +3,43 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Resource/jquery-easyui-1.4.1/themes/default/easyui.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Resource/easyui/themes/default/easyui.css")">
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Resource/Css/ht_reset.css")">
+
 </head>
 <body id="cc" class="easyui-layout">
     <!--头部-->
     <div data-options="region:'north',title:'OpenAPI测试',collapsible:false">
     </div>
-    <!--style="background: rgba(0, 0, 0, 0.17);"-->
     <!--左边导航栏-->
     <div data-options="region:'west',split:true,title:'菜单'" style="width: 235px;">
         <div class="easyui-accordion" id="nav" data-options="multiple:true,border: false" style="width: 235px;">
             <div title="酒店" data-options="selected: false">
                 <ul class="child-nav">
-                    <li><a href="javascript:void(0)" rel="~/hotel/NewAPI"><span
-                        class="nav">新接口</span></a></li>
-                    <li><a href="javascript:void(0)" rel="~/hotel/NewAPI"><span
-                        class="nav">老接口</span></a></li>
+                    <li>
+                        <a href="javascript:void(0)" rel="~/hotel/NewAPI">
+                            <span class="nav">新接口</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" rel="~/hotel/NewAPI">
+                            <span class="nav">老接口</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div title="景区" data-options="selected: false">
                 <ul class="child-nav">
-                    <li><a href="javascript:void(0)" rel="ref"><span
-                        class="nav">新接口</span></a></li>
-                    <li><a href="javascript:void(0)" rel="ref"><span
-                        class="nav">老接口</span></a></li>
+                    <li>
+                        <a href="javascript:void(0)" rel="ref">
+                            <span class="nav">新接口</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" rel="ref">
+                            <span class="nav">老接口</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -40,92 +52,78 @@
     <div data-options="region:'south',border:false" style="height: 40px; background: #A9FACD; padding: 10px;">south region</div>
 </body>
 </html>
-<script type="text/javascript" src="@Url.Content("~/Resource/Js/jquery-2.1.3.min.js")"></script>
-<script type="text/javascript" src="@Url.Content("~/Resource/jquery-easyui-1.4.1/jquery.easyui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Resource/easyui/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Resource/easyui/jquery.easyui.min.js")"></script>
 <script>
     //导航
     $('#nav li a').click(function () {
         var tabTitle = $(this).children('.nav').text();
         var url = $(this).attr("rel");
-        var childHeight = parseInt($(this).attr('childHeight'));
-
-        $('.tabs li:eq(0)').removeClass('tabs-selected'); //隐藏首页Tab
-        $('.tabs-panels .panel:eq(0)').hide(); //隐藏首页内容
-
         addTab(tabTitle, url);
 
-        $('.ht-link').removeClass('cur');
-        $('.easyui-accordion li div').removeClass("selected");
-        $(this).parent().addClass("selected");
-        $(this).parent().addClass('cur').siblings('li').removeClass('cur');
+        //$('.ht-link').removeClass('cur');
+        //$('.easyui-accordion li div').removeClass("selected");
+        //$(this).parent().addClass("selected");
+        //$(this).parent().addClass('cur').siblings('li').removeClass('cur');
 
-        $('.editCon').hide(); //编辑Tab内容进行隐藏
-        $('.editTab').removeClass('tabs-selected'); //编辑Tab进行隐藏
+        //$('.editCon').hide(); //编辑Tab内容进行隐藏
+        //$('.editTab').removeClass('tabs-selected'); //编辑Tab进行隐藏
     });
-
-    //省略不带有子类的导航
-    var navLen = $('#nav .panel').length;
-
-    for (var i = 0; i < navLen; i++) {
-        if ($('#nav .panel:eq(' + i + ')').find('.child-nav li').length == 0) {
-            $('#nav .panel:eq(' + i + ')').addClass('none');
-        }
-    }
-
-    //tab点击对象
-    $('.tabs').on('click', '.tabs-inner', function () {
-        var index = $(this).index('.tabs-inner');
-        if (index > 0) {
-            $('.tabs-panels .panel:eq(0)').hide();
-            $('.tabs li:eq(0)').removeClass('tabs-selected');
-
-            $('.tabs li:eq(' + index + ')').addClass('tabs-selected').siblings('li').removeClass('tabs-selected');
-            $('.tabs-panels .panel:eq(' + index + ')').show().siblings('.panel').hide();
-            //tab刷新
-            // window.frames['iframe'].location.reload();
-        }
-        else {
-            $('.tabs li:eq(0)').addClass('tabs-selected');
-            $('.tabs-panels .panel:eq(0)').show();
-        }
-    });
-
-    //tab点击关闭
-    $('.tabs').on('click', '.tabs-close', function () {
-        var index = $(this).index('.tabs-close');
-        $('.tabs li:eq(' + (index + 1) + ')').detach();
-        $('.tabs-panels .panel:eq(' + (index + 1) + ')').detach();
-        $('.tabs li:eq(' + index + ')').addClass('tabs-selected');
-        $('.tabs-panels .panel:eq(' + index + ')').show();
-    });
-
-    function addTab(tabTitle, url) {
-
-        if (!$('#tt').tabs('exists', tabTitle)) {
+    function addTab(title, url) {
+        if ($('#tt').tabs('exists', title)) {
+            $('#tt').tabs('select', title);
+        } else {
             $('#tt').tabs('add', {
-                title: tabTitle,
+                title: title,
                 content: createFrame(url),
-                iconCls: ' icon-save',
                 closable: true
             });
         }
-        else {
-            $('#tt').tabs('select', tabTitle);
-        }
     }
-
-    function getTab() {
-        var tab = $('#tt').tabs('getSelected');
-        alert('Selected: ' + tab.panel('options').title);
-    }
-
     function createFrame(url) {
         var s = '<iframe class="iframe" scrolling="auto" frameborder="0" src="' + url + '" style="width:100%; height:100%;"></iframe>';
         return s;
     }
 
-    $("#nav").accordion({
-        animate: true
-    });
+
+
+
+    ////tab点击对象
+    //$('.tabs').on('click', '.tabs-inner', function () {
+    //    var index = $(this).index('.tabs-inner');
+    //    if (index > 0) {
+    //        $('.tabs-panels .panel:eq(0)').hide();
+    //        $('.tabs li:eq(0)').removeClass('tabs-selected');
+
+    //        $('.tabs li:eq(' + index + ')').addClass('tabs-selected').siblings('li').removeClass('tabs-selected');
+    //        $('.tabs-panels .panel:eq(' + index + ')').show().siblings('.panel').hide();
+    //        //tab刷新
+    //        // window.frames['iframe'].location.reload();
+    //    }
+    //    else {
+    //        $('.tabs li:eq(0)').addClass('tabs-selected');
+    //        $('.tabs-panels .panel:eq(0)').show();
+    //    }
+    //});
+
+    ////tab点击关闭
+    //$('.tabs').on('click', '.tabs-close', function () {
+    //    var index = $(this).index('.tabs-close');
+    //    $('.tabs li:eq(' + (index + 1) + ')').detach();
+    //    $('.tabs-panels .panel:eq(' + (index + 1) + ')').detach();
+    //    $('.tabs li:eq(' + index + ')').addClass('tabs-selected');
+    //    $('.tabs-panels .panel:eq(' + index + ')').show();
+    //});
+
+    //function getTab() {
+    //    var tab = $('#tt').tabs('getSelected');
+    //    alert('Selected: ' + tab.panel('options').title);
+    //}
+
+
+
+    //$("#nav").accordion({
+    //    animate: true
+    //});
 
 </script>

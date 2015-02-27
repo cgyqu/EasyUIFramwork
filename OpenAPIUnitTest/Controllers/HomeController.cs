@@ -22,5 +22,10 @@ namespace OpenAPIUnitTest.Controllers
 		{
 			return View();
 		}
+
+        public ActionResult AddTabs() 
+        {
+            return View();
+        }
 	}
 }
