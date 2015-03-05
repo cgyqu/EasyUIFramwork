@@ -86,3 +86,7 @@ E:\Project\APIUnitTest\OpenAPIUnitTest\bin\zh-Hans\System.Web.WebPages.Razor.res
 E:\Project\APIUnitTest\OpenAPIUnitTest\obj\Debug\OpenAPIUnitTest.Web.csprojResolveAssemblyReference.cache
 E:\Project\APIUnitTest\OpenAPIUnitTest\obj\Debug\OpenAPIUnitTest.dll
 E:\Project\APIUnitTest\OpenAPIUnitTest\obj\Debug\OpenAPIUnitTest.pdb
+E:\MyWork\APIUnitTest\OpenAPIUnitTest\obj\Debug\OpenAPIUnitTest.Web.csprojResolveAssemblyReference.cache
+E:\MyWork\APIUnitTest\OpenAPIUnitTest\bin\Antlr3.Runtime.dll
+E:\MyWork\APIUnitTest\OpenAPIUnitTest\bin\WebGrease.dll
+E:\MyWork\APIUnitTest\OpenAPIUnitTest\bin\Antlr3.Runtime.pdb

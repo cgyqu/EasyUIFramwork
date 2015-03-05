@@ -12,8 +12,7 @@ namespace OpenAPIUnitTest
 				  "~/resource/js/jquery.js"));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
-				"~/resource/css/ht_reset.css",
-				"~/resource/css/common_tools.css"));
+				"~/resource/css/ht_reset.css"));
 		}
 	}
 }

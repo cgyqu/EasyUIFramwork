@@ -5,7 +5,6 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Resource/easyui/themes/default/easyui.css")">
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Resource/Css/ht_reset.css")">
-
 </head>
 <body id="cc" class="easyui-layout">
     <!--头部-->
@@ -18,12 +17,12 @@
                 <ul class="child-nav">
                     <li>
                         <a href="javascript:void(0)" rel="~/hotel/NewAPI">
-                            <span class="nav">新接口</span>
+                            <span class="nav">HotelNew</span>
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" rel="~/hotel/NewAPI">
-                            <span class="nav">老接口</span>
+                        <a href="javascript:void(0)" rel="~/hotel/OldAPI">
+                            <span class="nav">HotelOld</span>
                         </a>
                     </li>
                 </ul>
@@ -32,12 +31,12 @@
                 <ul class="child-nav">
                     <li>
                         <a href="javascript:void(0)" rel="ref">
-                            <span class="nav">新接口</span>
+                            <span class="nav">SceneryNew</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)" rel="ref">
-                            <span class="nav">老接口</span>
+                            <span class="nav">SceneryOld</span>
                         </a>
                     </li>
                 </ul>
@@ -45,9 +44,9 @@
         </div>
     </div>
     <!--中部-->
-    <div id='tt' data-options="region:'center',title:' '">
-        @RenderBody()
+    <div id='tt' class="easyui-tabs" data-options="region:'center',title:''">
     </div>
+    @RenderBody()
     <!--底部-->
     <div data-options="region:'south',border:false" style="height: 40px; background: #A9FACD; padding: 10px;">south region</div>
 </body>
@@ -61,13 +60,6 @@
         var url = $(this).attr("rel");
         addTab(tabTitle, url);
 
-        //$('.ht-link').removeClass('cur');
-        //$('.easyui-accordion li div').removeClass("selected");
-        //$(this).parent().addClass("selected");
-        //$(this).parent().addClass('cur').siblings('li').removeClass('cur');
-
-        //$('.editCon').hide(); //编辑Tab内容进行隐藏
-        //$('.editTab').removeClass('tabs-selected'); //编辑Tab进行隐藏
     });
     function addTab(title, url) {
         if ($('#tt').tabs('exists', title)) {
@@ -85,45 +77,49 @@
         return s;
     }
 
+    $(document).ready(function () {
+        addTab("首页", "home/test");
+    });
 
 
 
-    ////tab点击对象
-    //$('.tabs').on('click', '.tabs-inner', function () {
-    //    var index = $(this).index('.tabs-inner');
-    //    if (index > 0) {
-    //        $('.tabs-panels .panel:eq(0)').hide();
-    //        $('.tabs li:eq(0)').removeClass('tabs-selected');
 
-    //        $('.tabs li:eq(' + index + ')').addClass('tabs-selected').siblings('li').removeClass('tabs-selected');
-    //        $('.tabs-panels .panel:eq(' + index + ')').show().siblings('.panel').hide();
-    //        //tab刷新
-    //        // window.frames['iframe'].location.reload();
-    //    }
-    //    else {
-    //        $('.tabs li:eq(0)').addClass('tabs-selected');
-    //        $('.tabs-panels .panel:eq(0)').show();
-    //    }
-    //});
+    //tab点击对象
+    $('.tabs').on('click', '.tabs-inner', function () {
+        var index = $(this).index('.tabs-inner');
+        if (index > 0) {
+            $('.tabs-panels .panel:eq(0)').hide();
+            $('.tabs li:eq(0)').removeClass('tabs-selected');
 
-    ////tab点击关闭
-    //$('.tabs').on('click', '.tabs-close', function () {
-    //    var index = $(this).index('.tabs-close');
-    //    $('.tabs li:eq(' + (index + 1) + ')').detach();
-    //    $('.tabs-panels .panel:eq(' + (index + 1) + ')').detach();
-    //    $('.tabs li:eq(' + index + ')').addClass('tabs-selected');
-    //    $('.tabs-panels .panel:eq(' + index + ')').show();
-    //});
+            $('.tabs li:eq(' + index + ')').addClass('tabs-selected').siblings('li').removeClass('tabs-selected');
+            $('.tabs-panels .panel:eq(' + index + ')').show().siblings('.panel').hide();
+            //tab刷新
+            // window.frames['iframe'].location.reload();
+        }
+        else {
+            $('.tabs li:eq(0)').addClass('tabs-selected');
+            $('.tabs-panels .panel:eq(0)').show();
+        }
+    });
 
-    //function getTab() {
-    //    var tab = $('#tt').tabs('getSelected');
-    //    alert('Selected: ' + tab.panel('options').title);
-    //}
+    //tab点击关闭
+    $('.tabs').on('click', '.tabs-close', function () {
+        var index = $(this).index('.tabs-close');
+        $('.tabs li:eq(' + (index + 1) + ')').detach();
+        $('.tabs-panels .panel:eq(' + (index + 1) + ')').detach();
+        $('.tabs li:eq(' + index + ')').addClass('tabs-selected');
+        $('.tabs-panels .panel:eq(' + index + ')').show();
+    });
+
+    function getTab() {
+        var tab = $('#tt').tabs('getSelected');
+        alert('Selected: ' + tab.panel('options').title);
+    }
 
 
 
-    //$("#nav").accordion({
-    //    animate: true
-    //});
+    $("#nav").accordion({
+        animate: true
+    });
 
 </script>

@@ -14,7 +14,7 @@ namespace OpenAPIUnitTest.Controllers
 
 		public ActionResult Index()
 		{
-			return new APIContentResult() { Content = "Index", ContentType = "text/plain" };
+			return View();
 		}
 
 
