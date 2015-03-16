@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OpenAPIUnitTest.Model</RootNamespace>
     <AssemblyName>OpenAPIUnitTest.Model</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APIInfoNew.designer.cs">
+    <Compile Include="Data\UnitTestModel.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>APIInfoNew.dbml</DependentUpon>
+      <DependentUpon>UnitTestModel.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Model\APIModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -53,12 +55,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="APIInfoNew.dbml">
+    <None Include="Data\UnitTestModel.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>APIInfoNew.designer.cs</LastGenOutput>
+      <LastGenOutput>UnitTestModel.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -68,8 +69,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="APIInfoNew.dbml.layout">
-      <DependentUpon>APIInfoNew.dbml</DependentUpon>
+    <None Include="Data\UnitTestModel.dbml.layout">
+      <DependentUpon>UnitTestModel.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,3 @@
+E:\MyWork\APIUnitTest\OpenAPIUnitTest.Bussiness\obj\Debug\OpenAPIUnitTest.Bussiness.csprojResolveAssemblyReference.cache
+E:\MyWork\APIUnitTest\OpenAPIUnitTest.Bussiness\obj\Debug\OpenAPIUnitTest.Core.dll
+E:\MyWork\APIUnitTest\OpenAPIUnitTest.Bussiness\obj\Debug\OpenAPIUnitTest.Core.pdb

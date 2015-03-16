@@ -23,12 +23,7 @@ namespace OpenAPIUnitTest.Controllers
 			return View();
 		}
 
-        public ActionResult AddTabs() 
-        {
-            return View();
-        }
-
-		public ActionResult GetHotelAPI(int page) 
+		public ActionResult AddTabs()
 		{
 			return View();
 		}

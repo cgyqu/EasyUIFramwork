@@ -44,11 +44,15 @@
         </div>
     </div>
     <!--中部-->
-    <div id='tt' class="easyui-tabs" data-options="region:'center',title:''">
+    <div data-options="region:'center'">
+        <!--data-options="region:'center',title:''"*-->
+        <div id='tt' class="easyui-tabs" data-options="fit: true">
+        </div>
     </div>
+    @*<div data-options="region:'east',split:true" title="East" style="width:0%;"></div>*@
     @RenderBody()
     <!--底部-->
-    <div data-options="region:'south',border:false" style="height: 40px; background: #A9FACD; padding: 10px;">south region</div>
+    @*<div data-options="region:'south',border:false" style="height: 40px; background: #A9FACD; padding: 10px;">south region</div>*@
 </body>
 </html>
 <script type="text/javascript" src="@Url.Content("~/Resource/easyui/jquery.min.js")"></script>

@@ -3,4 +3,3 @@ E:\MyWork\APIUnitTest\OpenAPIUnitTest.Model\bin\Debug\OpenAPIUnitTest.Model.pdb
 E:\MyWork\APIUnitTest\OpenAPIUnitTest.Model\obj\Debug\OpenAPIUnitTest.Model.csprojResolveAssemblyReference.cache
 E:\MyWork\APIUnitTest\OpenAPIUnitTest.Model\obj\Debug\OpenAPIUnitTest.Model.dll
 E:\MyWork\APIUnitTest\OpenAPIUnitTest.Model\obj\Debug\OpenAPIUnitTest.Model.pdb
-E:\MyWork\APIUnitTest\OpenAPIUnitTest.Model\bin\Debug\OpenAPIUnitTest.Model.dll.config

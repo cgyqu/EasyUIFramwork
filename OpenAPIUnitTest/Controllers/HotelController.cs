@@ -20,6 +20,14 @@ namespace OpenAPIUnitTest.Controllers
 		{
 			return View();
 		}
+		/// <summary>
+		/// 添加老接口
+		/// </summary>
+		/// <returns></returns>
+		public ActionResult AddOld()
+		{
+			return Json("");
+		}
 
 	}
 }
