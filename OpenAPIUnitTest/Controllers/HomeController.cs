@@ -27,5 +27,10 @@ namespace OpenAPIUnitTest.Controllers
         {
             return View();
         }
+
+		public ActionResult GetHotelAPI(int page) 
+		{
+			return View();
+		}
 	}
 }

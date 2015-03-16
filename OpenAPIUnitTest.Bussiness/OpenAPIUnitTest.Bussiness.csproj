@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4ED4EF46-4CA3-4772-91CB-7F527ACF1621}</ProjectGuid>
+    <ProjectGuid>{A7FCF46A-A1DA-457C-9F58-203A9DB058E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OpenAPIUnitTest.Core</RootNamespace>
@@ -39,9 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Enum\Emun.cs" />
+    <Compile Include="HotelBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenAPIUnitTest.Model\OpenAPIUnitTest.Model.csproj">
+      <Project>{823474cd-a4cf-45b1-8de6-64ab6d1918ee}</Project>
+      <Name>OpenAPIUnitTest.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

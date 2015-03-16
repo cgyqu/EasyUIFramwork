@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace OpenAPIUnitTest.Model
 {
-    public class Class1
-    {
-    }
+    public enum Cat
+	{
+		Hotel,
+		Scenery,
+		Flight
+	}
+
+	public enum SubCat 
+	{
+		Query,
+		Order
+	}
+	public enum HttpType 
+	{
+		POST,
+		GET
+	}
 }
