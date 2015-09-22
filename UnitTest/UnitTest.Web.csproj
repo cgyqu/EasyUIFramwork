@@ -119,6 +119,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\AngularController.cs" />
     <Compile Include="Controllers\TestController .cs" />
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Global.asax.cs">
@@ -130,6 +131,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="Resource\angular\angular-csp.css" />
+    <Content Include="Resource\angular\angular.js" />
+    <Content Include="Resource\angular\angular.min.js" />
+    <Content Include="Resource\angular\index.js" />
     <Content Include="Resource\bootstrap-3.3.0-dist\css\bootstrap-theme.css" />
     <Content Include="Resource\bootstrap-3.3.0-dist\css\bootstrap-theme.min.css" />
     <Content Include="Resource\bootstrap-3.3.0-dist\css\bootstrap.css" />
@@ -810,6 +815,16 @@
       <Project>{04362dcf-389a-4287-bb39-3333b93f77ff}</Project>
       <Name>CommonLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Angular\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\angular\angular.min.js.gzip" />
+    <Content Include="Resource\angular\angular.min.js.map" />
+    <Content Include="Resource\angular\bower.json" />
+    <Content Include="Resource\angular\package.json" />
+    <Content Include="Resource\angular\README.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
